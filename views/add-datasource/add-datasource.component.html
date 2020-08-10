@@ -1,0 +1,64 @@
+
+<mat-card class="example-card">
+        <div>
+            <button mat-raised-button (click)="navigateToAllCharts()" class="close-button">close</button> 
+            <mat-card-title style="text-align: center" >Add a new Data-Source</mat-card-title> 
+        </div>
+    
+            <mat-card-content class="content-card">
+                <div class="form">
+                    <!-- <mat-form-field ><input matInput placeholder="Device"></mat-form-field><br>
+                
+                      <div style="text-align: left;">
+                        <p style="margin-left: 20%;">data records:
+                        <button mat-raised-button class="close-button" style= "margin-left: 30%;" (click)="newData()"><mat-icon>add</mat-icon></button></p> 
+                      </div>
+
+                      <mat-form-field><input matInput placeholder = "value "></mat-form-field>
+
+                      <<div *ngFor="let count of addForm.controls.values.controls; let i = index">
+                        <div>
+                          Link {{i +1}}
+                        </div>
+                        
+                          <div [formGroupName]="i">
+                              <mat-form-field><input matInput placeholder="value" formControlName="value"></mat-form-field>
+                          </div>
+                        mat-form-field><input matInput placeholder="value"></mat-form-field>
+                            app-datasource-value [val]="val" [i]="i"></app-datasource-value>
+                          
+
+                      </div>
+                      <div *ngIf="buttonpressed" style="max-height: 500px;">
+                      {{countDatasources+1}}  <mat-form-field><input matInput placeholder="value" [ngStyle]="changeMargin()"  ></mat-form-field>
+                      </div>
+                      <br>--> 
+                      <form [formGroup]="datasourceForm">
+                        <h3>Device name:</h3>
+                        <label>
+
+                        <mat-form-field ><input matInput placeholder="Device" formControlName="device" required></mat-form-field>
+                      </label>
+
+                        <div formArrayName="dataset">
+                            <h3>Datasets:</h3> <button mat-raised-button class="close-button" (click)="addDataset()">Add Dataset</button>
+                          
+                            <div *ngFor="let address of dataset.controls; let i=index">
+                              <!-- The repeated alias template -->
+                              <label>
+                               <mat-form-field> <input matInput type="text" [formControlName]="i" placeholder="Dataset {{i+1}}" required></mat-form-field>
+                                <button mat-icon-button (click)="deleteField(i)">
+                                  <mat-icon>clear</mat-icon>
+                                </button>
+                              </label>
+                            </div>
+                          </div>
+                      </form>
+                
+                        <button mat-raised-button class="save-button" (click)="printDatasets()" [disabled]="!datasourceForm.valid">save</button>
+                        <!-- [disabled]="!datasourceForm.valid"-->
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>

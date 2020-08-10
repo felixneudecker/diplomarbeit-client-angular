@@ -1,0 +1,84 @@
+.background-image{
+    display:block;
+    background-image: url("../../../assets/background_login.jpg") no-repeat center center fixed;
+    width: 100%;
+    height: 100%;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image:  url("../../../assets/background_login.jpg");
+ // background-image: url("https://images.unsplash.com/photo-1562516685-488706077e1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3000&q=80");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.example-card {
+    max-width: 400px;
+    text-align: center;
+    left: 15%;
+    top: 30%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10), 0 6px 6px rgba(0,0,0,0.14);
+  }
+
+  .register-button:disabled {
+    background: linear-gradient(120deg, #afdfdf, #80dbf0) !important;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px -3px -12px 5px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px -4px 12px 5px rgba(0,0,0,0.39);
+    box-shadow: 0px -4px -3px 5px rgba(0,0,0,0.39);
+    border: none;
+  }
+
+  .register-button {
+    background: linear-gradient(120deg, #afdfdf, #80dbf0) !important;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px -3px -12px 5px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px -4px 12px 5px rgba(0,0,0,0.39);
+    box-shadow: 0px -4px -3px 5px rgba(0,0,0,0.39);
+    border: none;
+  }
+
+  .disabled-button:disabled {
+    background: linear-gradient(120deg, #afdfdf, #80dbf0) !important;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px -3px -12px 5px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px -4px 12px 5px rgba(0,0,0,0.39);
+    box-shadow: 0px -4px -3px 5px rgba(0,0,0,0.39);
+    border: none;
+  }
+
+  ::ng-deep .snackbar{
+    color: black;
+    border-radius: 10px !important;
+    background: white;
+  }
+
+  ::ng-deep .mat-simple-snackbar-action{
+    background: #F0F0F0;
+    color: black;
+    border-radius: 10px;
+  }
+

@@ -1,0 +1,109 @@
+<mat-card class="example-card">
+  <div>
+    <button mat-raised-button (click)="navigateToAllCharts()" style="margin-bottom: 10px;" class="close-button">close</button>
+    <!-- <mat-icon>close</mat-icon> -->
+    <mat-card-title style="text-align: center">Add a new Chart</mat-card-title>
+  </div>
+
+  <mat-card-content class="content-card">
+    <form [formGroup]="diagramForm">
+      <mat-form-field><input matInput placeholder="title" formControlName="title" required></mat-form-field><br>
+
+      <mat-form-field style="z-index: 20">
+        <mat-select name="type" formControlName="type">
+          <mat-option *ngFor="let chart of charts" [value]="chart">
+            {{chart}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div formArrayName="labels">
+        <h3>Label:</h3> <button mat-raised-button (click)="addLabel()" class="close-button">Add Label</button>
+
+        <div *ngFor="let address of labels.controls; let i=index" style="margin: 0px auto">
+          <label>
+            <mat-form-field> <input matInput type="text" [formControlName]="i" placeholder="Label {{i+1}}" required>
+            </mat-form-field>
+
+          </label>
+
+          <button mat-icon-button (click)="deleteField(i)">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+      </div>
+
+      <mat-form-field>
+        <mat-select name="datasource" formControlName="datasource">
+          <mat-option *ngFor="let ds of this.dservice.sources" [value]="ds.id">
+            <!---->
+            {{ds.device}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <!--
+            <mat-form-field  *ngIf='selected'>
+              <p>This Datasource has {{this.dservice.sources.length}} entries! </p>
+              <div>
+
+              </div>
+            </mat-form-field>-->
+
+      <button mat-raised-button class="save-button" (click)="printDatasets()"
+        [disabled]="!diagramForm.valid">save</button>
+
+    </form>
+
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<!--
+<mat-card class="example-card">
+        <div>
+            <button mat-raised-button (click)="navigateToAllCharts()" class="close-button"><mat-icon>close</mat-icon></button> 
+            <mat-card-title style="text-align: center" >Add a new Chart</mat-card-title> 
+        </div>
+    
+            <mat-card-content class="content-card">
+                <div class="form">
+                      <mat-form-field ><input matInput placeholder="title"></mat-form-field><br>
+
+                      <mat-form-field>
+                            <mat-label>Type of chart</mat-label>
+                            <mat-select>
+                                    <mat-option value="pie">Pie chart</mat-option>
+                                    <mat-option value="bar">Bar chart</mat-option>
+                                    <mat-option value="line">Line chart</mat-option>
+                                    <mat-option value="doughnut">Doughnut chart</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                      <div style="text-align: left;">
+                        <p style="margin-left: 20%;">labels:
+                        <button mat-raised-button class="close-button" style= "margin-left: 30%;" (click)="newData()"><mat-icon>add</mat-icon></button></p> 
+                      </div>
+
+                      <mat-form-field><input matInput placeholder = "value "></mat-form-field>
+
+                      <p>Do kummt nu wos her...hoffentlich morgen!</p>
+
+                      <mat-form-field>
+                            <mat-label>select datasource</mat-label>
+                            <mat-select> 
+                                    <mat-option value="datasource1">Machine 1</mat-option>
+                                    <mat-option value="bar">Machine 2</mat-option>
+                            </mat-select>
+                          </mat-form-field><br>
+                        
+                        <button mat-raised-button class="save-button" (click)="checkToServer()">save</button>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>
+    
+    -->

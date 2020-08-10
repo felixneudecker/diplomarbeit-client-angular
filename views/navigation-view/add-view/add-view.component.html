@@ -1,0 +1,26 @@
+<mat-card class="example-card">
+        <div>
+            <button mat-raised-button (click)="navigateToAllCharts()" style="margin-bottom: 10px;" class="close-button">close</button> 
+            <!-- <mat-icon>close</mat-icon> -->
+            <mat-card-title style="text-align: center" >Add a new View</mat-card-title> 
+        </div>
+
+        <mat-card-content class="content-card">
+
+            <form [formGroup]="viewForm">
+                  <mat-form-field>
+                      <input matInput placeholder="name" formControlName="name" required>
+                    </mat-form-field><br>
+
+                   <div class="checkboxes">
+                    <p *ngFor="let diagram of this.diagramService.diagramArray; let i = index" formArrayName="diagrams">
+                          <mat-checkbox color="primary" (change)="updateChkbxArray(diagram, $event.checked, i)">{{diagram.title}}</mat-checkbox>
+                      </p>
+                  </div>
+
+                  <button mat-raised-button class="save-button" (click)="printDatasets()" [disabled]="!viewForm.valid">save</button>
+      
+                </form>
+
+              </mat-card-content>
+</mat-card>

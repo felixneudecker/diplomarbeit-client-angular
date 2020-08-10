@@ -1,0 +1,74 @@
+<mat-card class="example-card">
+    <div>
+        <button mat-raised-button (click)="navigateToAllCharts()" class="close-button">close</button>
+        <mat-card-title style="text-align: center">manage Datasources</mat-card-title>
+    </div>
+
+    <mat-card-content class="content-card">
+
+        <div id="left-content container" class="buttons-left">
+            <mat-list class="buttons" *ngFor="let datasource of datasourceService.sourcesFromOneUser; let i=index"
+                id="list" style="padding: 0px !important;"><!--[ngStyle]="{'background' : numb === i ? 'white' : 'none'}" -->
+                <mat-list-item class="item"><button mat-raised-button (click)="activeButton(i)" id="i" class="side-buttons" [ngClass]="{'active-button':numb === i }">{{datasource.device}}</button>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+        <div class="container" id="right-content">
+            <form [formGroup]="datasourceForm">
+                <mat-form-field><input matInput placeholder="title" formControlName="device" required></mat-form-field>
+                <br>
+
+                <h3>Datsets:</h3>
+
+                <div *ngIf="pressed == true">
+                    <div *ngFor="let ds of activeDatasource.dataset; let i = index; ">
+                        <!-- {{ds}}  -->
+                        <mat-form-field> <input matInput type="text" placeholder="Dataset {{i+1}}" value="{{ds}}"
+                                (change)="updateDatasets($event,i)" required></mat-form-field>
+
+                        <button mat-icon-button (click)="removeField(i)">
+                            <mat-icon>clear</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div *ngIf="pressed==true">
+
+                    <div formArrayName="dataset">
+                        <button mat-raised-button class="addDataset" (click)="addDataset()">Add more Values</button>
+
+                        <!--<div *ngFor="let ds of "></div>-->
+
+
+                        <div *ngFor="let dataset of dataset.controls; let i=index">
+                            <label>
+                                <mat-form-field> <input matInput type="text" [formControlName]="i"
+                                        placeholder="Dataset {{values.length +i+1}}"></mat-form-field>
+                                <button mat-icon-button (click)="deleteField(i)">
+                                    <mat-icon>clear</mat-icon>
+                                </button>
+                            </label>
+                        </div><br>
+                    </div>
+
+                </div>
+
+                <div>
+                    <button mat-raised-button style="margin-right: 10px;" (click)="deleteDataSource()" class="close-button"> delete
+                        Datasource</button>
+                    <button mat-raised-button class="save-button" (click)="sendToServer()" style="margin: 0px auto;"
+                        [disabled]="!datasourceForm.valid">save</button>
+
+                </div>
+
+
+
+
+            </form>
+
+        </div>
+
+    </mat-card-content>
+
+</mat-card>

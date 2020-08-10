@@ -1,0 +1,48 @@
+<mat-dialog-content>
+<mat-card class="example-card">
+        <div>
+            <button mat-raised-button (click)="navigateToAllCharts()" style="margin-bottom: 15px" class="close-button"> close </button> 
+            <mat-card-title style="text-align: center" >Settings</mat-card-title> 
+        </div>
+    
+            <mat-card-content class="content-card">
+              
+                <div class="form">
+
+                    <form [formGroup]="settingsForm">
+
+                        <mat-form-field>
+                            <input matInput placeholder="First Name" formControlName="firstname" required>
+                            <mat-error *ngIf="settingsForm.invalid">{{getErrorMessageFirstname()}}</mat-error>
+                        </mat-form-field><br>
+
+                        <mat-form-field>
+                            <input matInput placeholder="Last Name" formControlName="lastname" required>
+                            <mat-error *ngIf="settingsForm.invalid">{{getErrorMessageLastname()}}</mat-error>
+                        </mat-form-field><br>
+
+                        <mat-form-field>
+                            <input matInput type="email" placeholder="Email" formControlName="email" required>
+                            <mat-error *ngIf="settingsForm.invalid">{{getErrorMessageEmail()}}</mat-error>
+                        </mat-form-field><br>
+
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && settingsForm.password.errors }" required>
+                        </mat-form-field><br>
+                        
+                        
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="confirm Password" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && settingsForm.confirmPassword.errors }" required>
+                            <mat-error *ngIf="settingsForm.invalid">{{getErrorMessagePassword()}}</mat-error>
+                        </mat-form-field><br>
+                            
+                               
+                        <button mat-raised-button class="save-button" [disabled]="!settingsForm.valid" (click)="checkToServer()">save</button>
+                    </form>
+
+                    
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>

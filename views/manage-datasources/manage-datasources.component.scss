@@ -1,0 +1,120 @@
+
+.example-card {
+    max-width: 600px;
+    margin-top: 10vh !important;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12), 0 10px 15px rgba(0, 0, 0, 0.12);
+    height: auto;
+  //  display: flex;
+  }
+
+  .content-card{
+    display: flex;
+  }
+
+  .container {
+    float: left;
+    margin-left: 20px;
+    flex: 1;
+  }
+
+  .save-button {
+    background: linear-gradient(120deg, #afdfdf, #80dbf0) !important;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px -3px -12px 5px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px -4px 12px 5px rgba(0,0,0,0.39);
+    box-shadow: 0px -4px -3px 5px rgba(0,0,0,0.39);
+    border: none;
+  }
+
+  .header{
+    text-align: center;
+    margin: 0px auto;
+  }
+
+  .title{
+    text-align: center;
+    margin: auto;
+  }
+
+  .close-button{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#right-content{
+  padding-top: 30px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+/*#left-content{
+  background: #F0F0F0;
+  border-radius: 15px !important;
+  padding-bottom: 20px;
+}*/
+
+.buttons-left{
+  background: #F0F0F0;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 0px;
+}
+.mat-list-item{
+  width: 100%;
+  max-height: 40px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.pressed {
+  background-color: red;
+}
+
+.addDataset{
+  margin-bottom: 10px;
+}
+
+.mat-raised-button{
+  font-family: SFLight, "Helvetica Neue", sans-serif;
+}
+
+.side-buttons{
+  width: 100%;
+  background: none;
+  box-shadow: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.side-buttons:focus{
+  background: white;
+  border-radius: 12px;
+  margin: 0px auto !important;
+  -webkit-box-shadow: 6px 10px 25px -13px rgba(0,0,0,0.5);
+  -moz-box-shadow: 6px 10px 25px -13px rgba(0,0,0,0.5);
+  box-shadow: 6px 10px 25px -13px rgba(0,0,0,0.5);
+}
+
+.active-button {
+  background: white;
+  border-radius: 12px;
+  margin: 0px auto !important;
+  -webkit-box-shadow: 6px 10px 25px -13px rgba(0,0,0,0.5);
+  -moz-box-shadow: 6px 10px 25px -13px rgba(0,0,0,0.5);
+  box-shadow: 6px 10px 25px -13px rgba(0,0,0,0.5);  
+}
+
+::ng-deep .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content{
+  padding: 0px 5px !important;
+}
+
+.close-button{
+  border-radius: 12px;
+}

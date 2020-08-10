@@ -1,0 +1,87 @@
+body{
+    font-family: SFLight, sans-serif;
+    background: none;
+}
+
+.nav-text{
+    font-family: SFLight, sans-serif;
+}
+
+.example-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+.sidenav{
+    z-index: 1002;
+}
+
+.gradient-button{
+    background: linear-gradient(120deg, #afdfdf, #80dbf0) !important;
+    color: white;
+    margin: 10px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px -3px -12px 5px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px -4px 12px 5px rgba(0,0,0,0.39);
+    box-shadow: 0px -4px -10px -10px rgba(0,0,0,0.22);
+    border: none;
+}
+
+.mat-drawer-container{
+    background: none;
+}
+
+::ng-deep .snackbar{
+    color: black;
+    border-radius: 10px !important;
+    background: white;
+  }
+
+  ::ng-deep .mat-simple-snackbar-action{
+    background: #F0F0F0;
+    color: black;
+    border-radius: 10px;
+  }
+
+.button-menu{
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#list{
+    margin: 5px auto;
+    text-align: center;
+}
+
+.oneButton{
+    background: #F0F0F0;
+    margin: 0px auto;
+    text-align: center;
+    min-width: 150px;
+    border-radius: 12px;
+    box-shadow: 0px -4px -10px -10px rgba(0,0,0,0.22);
+}
+
+.navigation-bar{
+    float: left;
+    width: 33.3333%;
+    //background: yellowgreen;
+}
+
+.middle-bar{
+    text-align: center;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+}
+
+.right-bar{
+    text-align: right;
+}

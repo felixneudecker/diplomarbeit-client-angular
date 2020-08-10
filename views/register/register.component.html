@@ -1,0 +1,46 @@
+<div class="bg">
+        <mat-card class="example-card">
+                <div>
+                    <h1>Create your account</h1>
+                </div>
+            
+                    <mat-card-content class="content-card">
+                        <div>
+                            <button mat-raised-button  (click)="navigateToLogin()">log in</button>
+                            <button mat-raised-button class="disabled-button"  disabled>register</button>
+                        </div>
+
+                        <form [formGroup]="registerForm">
+                            <div class="name">
+                                <mat-form-field style="margin-right: 5px;">
+                                    <input matInput placeholder="Enter your firstname" formControlName="firstname" required>
+                                </mat-form-field>
+                                <mat-form-field style="margin-left: 5px;">
+                                    <input matInput placeholder="Enter your lastname" formControlName="lastname" required>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field>
+                                <input matInput placeholder="Enter your email" formControlName="email" required>
+                                <mat-error *ngIf="registerForm.invalid">{{getErrorMessageEmail()}}</mat-error>
+                            </mat-form-field><br>
+
+                            <mat-form-field style="margin-right: 5px;">
+                                <input matInput placeholder="Enter your password" type="password" formControlName="password" required>
+                                <mat-error *ngIf="registerForm.invalid">{{getErrorMessagePassword()}}</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field style="margin-left: 5px;">
+                                    <input matInput placeholder="Confirm your password" type="password" formControlName="confirmPassword" required>
+                                    <mat-error *ngIf="registerForm.invalid">{{getErrorMessagePassword()}}</mat-error>
+                            </mat-form-field>
+                        </form>
+
+                            <button mat-raised-button class="register-button" (click)="register()" [disabled]="!registerForm.valid">register</button>
+                    </mat-card-content>
+                    <mat-card-actions>
+                    </mat-card-actions>
+
+                  </mat-card>
+
+</div>
+

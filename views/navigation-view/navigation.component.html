@@ -1,0 +1,61 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav class="sidenav" #sidenav style="width: 25%; border-radius: 0px 20px 20px 0px;"
+    (keydown.escape)="close('escape')" disableClose>
+    <div style="margin: 0px auto; text-align: center">
+      <p><button mat-icon-button (click)="close('toggle button')" style=" margin-left: 20px;float:left">
+          <mat-icon>close</mat-icon>
+        </button></p>
+    </div>
+
+    <div class="button-menu">
+      <h2>manage Views: </h2>
+      <button mat-raised-button class="gradient-button" (click)="navigateToAddView()"> <i class="material-icons icon"
+          style="text-align: left">add</i> add View</button>
+      <div>
+        <mat-list class="buttons" *ngFor="let view of this.viewService.viewArray; let i=index" id="list">
+          <mat-list-item><button mat-raised-button (click)="activeButton(i)" class="oneButton">{{view.name}}</button>
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+
+    </div>
+
+    <div id="left-content">
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="top-toolbar">
+
+      <div class="navigation-bar">
+        <button mat-icon-button (click)="openMat()">
+          <mat-icon class="icon">menu</mat-icon>
+        </button>
+        active View:<b> {{this.viewService.activeView.name}}</b>
+      </div>
+
+      <div class="navigation-bar middle-bar">
+        <select (change)="changingValue($event)"
+          style="background: none; color: white; border:none; font-size: 20px;margin-left:40px" value="activeView.name">
+          <option selected *ngIf="this.viewService.activeView.name" disabled>{{this.viewService.activeView.name}}</option>
+          <option selected *ngIf="!this.viewService.activeView.name" disabled>select a view</option>
+          <option *ngFor="let view of viewService.viewArray" value="{{view.id}}">
+            {{view.name}}
+          </option>
+        </select>
+      </div>
+
+      <div class="navigation-bar right-bar">
+        <button mat-icon-button (click)="navigateToSettings()" style="font-size: 20px;">
+          <mat-icon class="icon">settings</mat-icon>
+        </button>
+        <button mat-icon-button (click)="navigateToLogOut()">
+          <mat-icon class="icon">exit_to_app</mat-icon>
+        </button>
+      </div>
+
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
